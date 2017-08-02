@@ -16,7 +16,14 @@ import com.example.android.android_me.data.AndroidImageAssets;
 
 public class BodyPartFragment extends Fragment {
 
-    // Mandatory constructor for instantiating the fragment
+    // TODO (1) Create a setter method and class variable to set and store of a list of image resources
+
+    // TODO (2) Create another setter method and variable to track and set the index of the list item to display
+        // ex. index = 0 is the first image id in the given list , index 1 is the second, and so on
+
+    /**
+     * Mandatory empty constructor for the fragment manager to instantiate the fragment
+     */
     public BodyPartFragment(){
 
     }
@@ -35,6 +42,9 @@ public class BodyPartFragment extends Fragment {
 
         // Set the image resource to display
         imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+
+        // TODO (3) If a list of image ids exists, set the image resource to the correct item in that list
+            // Otherwise, create a Log statement that indicates that the list was not found
 
         // Return root view
         return rootView;

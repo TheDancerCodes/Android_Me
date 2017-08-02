@@ -9,23 +9,15 @@ import com.example.android.android_me.R;
 
 public class AndroidMeActivity extends AppCompatActivity {
 
-    // TODO (1) Create a layout file that displays one body part image named fragment_body_part.xml
-        // This layout should contain a single imageView
-
-    // TODO (2) Create a new class called BodyPartFragment to display an image of an Android-Me body part
-        // In this class you will need to implement an empty constructor and the onCreateView method
-
-    // TODO (3) Show the first image in this list of head images
-        // Soon, you'll update this image display code to show any image you want
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        // TODO (5) Create a new BodyFragment instance and display it using the FragmentManager
+        // Create a new head BodyFragment
         BodyPartFragment headFragment = new BodyPartFragment();
+
+        // TODO (4) Set the list of image id's for the head fragment and set the position to the second image in the list
 
         // Use a FragmentManager and transaction to add the fragment to the screen.
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -34,5 +26,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         fragmentManager.beginTransaction()
                 .add(R.id.head_container, headFragment)
                 .commit();
+
+        // TODO (5) Create and display the body and leg BodyPartFragments
     }
 }
