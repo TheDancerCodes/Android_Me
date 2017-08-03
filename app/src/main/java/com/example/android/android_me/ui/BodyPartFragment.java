@@ -46,7 +46,7 @@ public class BodyPartFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
 
         // Get a reference to the ImageView in the fragment layout.
-        ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
+        final ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
         // If a list of image ids exists, set the image resource to the correct item in that list
             // Otherwise, create a Log statement that indicates that the list was not found
@@ -56,6 +56,22 @@ public class BodyPartFragment extends Fragment {
 
             // TODO (1) Set a click listener on the image view and on a click increment the list index and set the image resource
             // TODO (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
+
+            // Set a click listener on the image view image view
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Increment position as long as the index remains <= the size of image ids list
+                    if(mListIndex < mImageIds.size()-1) {
+                        mListIndex++;
+                    } else {
+                        // The end of the list has been reached, so return to the beginning index
+                        mListIndex = 0;
+                    }
+                    // Set the image resource to the new list item
+                    imageView.setImageResource(mImageIds.get(mListIndex));
+                }
+            });
 
         } else {
             // Log a message saying the image id list is null
