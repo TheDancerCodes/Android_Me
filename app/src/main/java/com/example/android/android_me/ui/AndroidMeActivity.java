@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.android.android_me.R;
+import com.example.android.android_me.data.AndroidImageAssets;
 
 public class AndroidMeActivity extends AppCompatActivity {
 
@@ -18,6 +19,10 @@ public class AndroidMeActivity extends AppCompatActivity {
         BodyPartFragment headFragment = new BodyPartFragment();
 
         // TODO (4) Set the list of image id's for the head fragment and set the position to the second image in the list
+
+        // Set the list of image id's for the head fragment and set the position to the second image in the list
+        headFragment.setImageIds(AndroidImageAssets.getHeads());
+        headFragment.setListIndex(1);
 
         // Use a FragmentManager and transaction to add the fragment to the screen.
         FragmentManager fragmentManager = getSupportFragmentManager();
