@@ -19,6 +19,12 @@ public class MasterListAdapter extends BaseAdapter {
     private Context mContext;
     private List<Integer> mImageIds;
 
+
+    public MasterListAdapter(Context context, List<Integer> imageIds) {
+        mContext = context;
+        mImageIds = imageIds;
+    }
+
     /**
      * Returns the number of items the adapter will display
      */
